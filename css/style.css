@@ -1,0 +1,656 @@
+/* General Body & HTML Resets */
+:root {
+    --primary-color :#333 ;
+    --secondary-color: #28a745; 
+    --text-color: #6c757d;
+    --light-bg: #f8f9fa; 
+    --border-color: #dee2e6;
+    --white: #fff;
+    --dark-grey: #6c757d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* A professional, legible font */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-grey);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--primary-color);
+    color: var(--Blue); /* You might want to change this to a darker color if light gold makes white text hard to read */
+    padding: 15px 0;
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+
+     /* header .logo img {
+        height: 300px;Adjust logo height as needed 
+        width: auto;
+        display: block;  Remove extra space below image 
+    }*/
+
+    header .logo img {
+        height: 300px; /* Adjust logo height as needed */
+        width: auto; /* Or set to 300px for a regular diamond */
+        display: block; /* Remove extra space below image */
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    header nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+        header nav ul li {
+            margin-left: 25px;
+        }
+
+            header nav ul li a {
+                color: var(--white); /* Consider changing if contrast with light gold is poor */
+                text-decoration: none;
+                font-weight: bold;
+                transition: color 0.3s ease;
+                white-space: nowrap; /* Prevent menu items from breaking */
+            }
+
+                header nav ul li a:hover {
+                    color: var(--secondary-color); /* Or perhaps a darker shade of gold or --text-color */
+                }
+
+.contact-info-header {
+    font-size: 0.9em;
+    padding: 5px 0;
+    white-space: nowrap; /* Keep contact info on one line */
+    /* color: var(--white); /* Consider if this needs to change for readability against light gold */
+}
+
+/* Hero Section */
+.hero {
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover; /* Add a relevant background image in images/hero-bg.jpg */
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+    position: relative; /* For overlay */
+}
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+        z-index: 1;
+    }
+
+    .hero .container {
+        position: relative;
+        z-index: 2; /* Ensure content is above overlay */
+    }
+
+    .hero h1 {
+        font-size: 3em;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .hero p {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+    }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: #218838; /* Slightly darker green */
+        transform: translateY(-2px);
+    }
+
+/* General Section Styling */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+    section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+        color: var(--primary-color); /* This will now be light gold */
+    }
+
+    section p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+/* Welcome Section */
+.welcome-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* Services Overview Cards */
+.services-overview .service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .service-card h3 {
+        color: var(--primary-color); /* This will now be light gold */
+        margin-bottom: 15px;
+        font-size: 1.5em;
+    }
+
+    /* Placeholder for service icons (if you use them) */
+    .service-card::before {
+        /* content: '🌟'; Example icon, replace with actual image or font icon */
+        font-size: 3em;
+        display: block;
+        margin-bottom: 15px;
+        color: var(--secondary-color);
+    }
+
+/* Why Choose Us Section */
+.why-choose-us ul {
+    list-style: none;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .why-choose-us ul li {
+        background-color: var(--light-bg);
+        margin-bottom: 15px;
+        padding: 15px 25px;
+        border-left: 5px solid var(--primary-color); /* This border will be light gold */
+        border-radius: 5px;
+        font-size: 1.1em;
+    }
+
+        .why-choose-us ul li strong {
+            color: var(--primary-color); /* This will now be light gold */
+        }
+
+/* Testimonials */
+.testimonials .testimonial-item {
+    background-color: var(--primary-color); /* This will now be light gold */
+    color: var(--text-color); /* Changed from var(--white) for better readability against light gold */
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+    .testimonials .testimonial-item p {
+        font-style: italic;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        line-height: 1.8;
+    }
+
+    .testimonials .testimonial-item cite {
+        display: block;
+        font-weight: bold;
+        font-size: 0.9em;
+        text-align: right;
+        /* color: var(--white); /* Consider if this needs to be darker */
+    }
+
+/* Affiliations */
+.affiliations .affiliation-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+    .affiliations .affiliation-logos img {
+        height: 80px; /* Adjust as needed */
+        width: auto;
+        max-width: 150px;
+        filter: grayscale(80%); /* Optional: make logos subtle */
+        transition: filter 0.3s ease;
+    }
+
+        .affiliations .affiliation-logos img:hover {
+            filter: grayscale(0%); /* Optional: color on hover */
+        }
+
+
+/* Services Page Specifics */
+.service-detail {
+    padding: 50px 0;
+    text-align: left;
+}
+
+    .service-detail h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: var(--primary-color); /* This will now be light gold */
+    }
+
+    .service-detail ul {
+        list-style: none;
+        padding-left: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+        .service-detail ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.1em;
+        }
+
+            .service-detail ul li::before {
+                content: '✓'; /* Checkmark icon */
+                color: var(--secondary-color);
+                font-weight: bold;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+.call-to-action-services {
+    background-color: var(--primary-color); /* This will now be light gold */
+    color: var(--text-color); /* Changed from var(--white) for better readability */
+    padding: 50px 20px;
+}
+
+    .call-to-action-services p {
+        font-size: 1.4em;
+        margin-bottom: 30px;
+    }
+
+/* About Us Page Specifics */
+.our-philosophy p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+
+.meet-maria .maria-content {
+    display: flex;
+    flex-direction: column; /* Default to column on small screens */
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.meet-maria .profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.meet-maria .maria-text h2 {
+    text-align: left;
+    margin-bottom: 15px;
+    color: var(--primary-color); /* This will now be light gold */
+}
+
+.meet-maria .maria-text p {
+    font-size: 1.1em;
+}
+
+.our-values ul {
+    list-style: none;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+    .our-values ul li {
+        background-color: var(--primary-color); /* This will now be light gold */
+        color: var(--text-color); /* Changed from var(--white) for better readability */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+        .our-values ul li strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: var(--secondary-color); /* Highlight value names, consider if this green works well with light gold */
+        }
+
+/* Contact Page Specifics */
+.contact-form-section .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-color); /* This will now be light gold */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button.btn {
+    width: auto; /* Override default button width */
+    display: block; /* Center button */
+    margin: 0 auto;
+}
+
+.direct-contact-info, .operating-hours, .social-media {
+    text-align: center;
+    padding: 40px 0;
+}
+
+    .direct-contact-info p, .operating-hours p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .direct-contact-info a {
+        color: var(--primary-color); /* This will now be light gold */
+        text-decoration: none;
+    }
+
+        .direct-contact-info a:hover {
+            text-decoration: underline;
+        }
+
+.office-location iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.social-media .social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--primary-color); /* This will now be light gold */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+    .social-media .social-links a:hover {
+        color: var(--secondary-color);
+    }
+
+/* Footer */
+footer {
+    background-color: var(--primary-color); /* This will now be light gold */
+    color: var(--text-color); /* Changed from var(--white) for better readability */
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+    footer .container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer .footer-links ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+        footer .footer-links ul li a {
+            color: var(--text-color); /* Changed for readability */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+            footer .footer-links ul li a:hover {
+                color: var(--secondary-color); /* Or perhaps a darker gold */
+            }
+
+    footer .legal-info a {
+        color: var(--text-color); /* Changed for readability */
+        text-decoration: none;
+        margin: 0 5px;
+    }
+
+        footer .legal-info a:hover {
+            text-decoration: underline;
+        }
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .services-overview .service-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .meet-maria .maria-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .meet-maria .maria-text h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+        header nav ul li {
+            margin: 0 10px 10px 10px;
+        }
+
+    .contact-info-header {
+        margin-top: 10px;
+        /* color: var(--text-color); /* Ensure readability if header bg is light gold */
+    }
+
+    header nav ul li a {
+        /* color: var(--text-color); /* Ensure readability if header bg is light gold */
+    }
+
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+        .hero h1 {
+            font-size: 2em;
+        }
+
+        .hero p {
+            font-size: 1em;
+        }
+
+    section {
+        padding: 40px 0;
+    }
+
+        section h2 {
+            font-size: 1.8em;
+        }
+
+    .why-choose-us ul li,
+    .our-values ul li {
+        padding: 15px;
+    }
+
+    .service-detail ul {
+        padding-left: 0;
+    }
+
+        .service-detail ul li {
+            padding-left: 20px;
+        }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px 0;
+    }
+
+    header .logo img {
+        height: 200px;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+        .hero h1 {
+            font-size: 1.6em;
+        }
+
+        .hero p {
+            font-size: 0.9em;
+        }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    section p {
+        font-size: 0.95em;
+    }
+
+    .services-overview .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-item {
+        padding: 20px;
+    }
+
+    .affiliations .affiliation-logos img {
+        height: 60px;
+        margin: 0 10px;
+    }
+
+    .contact-form-section .contact-form {
+        padding: 20px;
+    }
+
+    footer .footer-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
