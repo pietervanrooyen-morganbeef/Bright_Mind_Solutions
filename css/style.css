@@ -1,9 +1,9 @@
 /* General Body & HTML Resets */
 :root {
-    --primary-color :#333 ;
-    --secondary-color: #28a745; 
+    --primary-color: #333;
+    --secondary-color: #FFD700; /* Change from #28a745 (green) to gold */
     --text-color: #6c757d;
-    --light-bg: #f8f9fa; 
+    --light-bg: #f8f9fa;
     --border-color: #dee2e6;
     --white: #fff;
     --dark-grey: #6c757d;
@@ -34,7 +34,7 @@ header {
     background-color: var(--primary-color);
     color: var(--Blue); /* You might want to change this to a darker color if light gold makes white text hard to read */
     padding: 15px 0;
-    border-bottom: 5px solid var(--secondary-color);
+    border-bottom: 5px solid #FFD700; /* Use gold directly */
 }
 
     header .container {
