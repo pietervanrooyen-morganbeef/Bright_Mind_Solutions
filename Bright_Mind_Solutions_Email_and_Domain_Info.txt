@@ -1,0 +1,38 @@
+Hi Maria, 
+
+Die domain registrasie is tans in proses. Hou asb die volgende details op rekord. Dit sluit jou cPanel (hosting panel) en Email inligting in:
+
++===================================+
+| New Account Info                  |
++===================================+
+| cPanel: brightmindsolutions.co.za/cpanel
+| Domain: brightmindsolutions.co.za
+| UserName: brightmindsoluti
+| PassWord: l3MAF+iS2b_b
++===================================+
+
+Mail Settings: 
+Secure SSL/TLS Settings (Recommended)
+
+Username:
+admin@brightmindsolutions.co.za
+Password:
+9WD{#E3Shk,(
+
+Incoming Server:
+brightmindsolutions.co.za
+
+IMAP Port: 993
+POP3 Port: 995
+
+Outgoing Server:
+brightmindsolutions.co.za
+
+SMTP Port: 465
+
+*IMAP, POP3, and SMTP require authentication.
+
+
+Groete
+
+Koch Beukes
